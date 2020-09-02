@@ -8,7 +8,7 @@ import {FilledButton} from '../components/FilledButton';
 import {TextButton} from '../components/TextButton';
 import {Error} from '../components/Error';
 
-export function LoginScreen() {
+export function LoginScreen({navigation}) {
   return (
     <View style={styles.container}>
       <Heading style={styles.title}>LOGIN</Heading>
@@ -19,7 +19,13 @@ export function LoginScreen() {
         keyboardType="email-address"
       />
       <Input style={styles.input} placeholder={'password'} secureTextEntry />
-      <FilledButton title="Login" style={styles.loginButton} />
+      <FilledButton
+        title="Login"
+        style={styles.loginButton}
+        onPress={() => {
+          navigation.navigate('Registration');
+        }}
+      />
       <TextButton title={'Sudah punya akun? buat ya'} onPress={() => {}} />
     </View>
   );
