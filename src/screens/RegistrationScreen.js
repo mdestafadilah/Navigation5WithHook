@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {StyleSheet, View} from 'react-native';
 
 // Komponen
@@ -8,7 +8,11 @@ import {FilledButton} from '../components/FilledButton';
 import {IconButton} from '../components/IconButton';
 import {Error} from '../components/Error';
 
+// Context
+import {AuthContext} from '../contexts/AuthContext';
+
 export function RegistrationScreen({navigation}) {
+  const {register} = useContext(AuthContext);
   return (
     <View style={styles.container}>
       <IconButton
@@ -26,7 +30,13 @@ export function RegistrationScreen({navigation}) {
         keyboardType="email-address"
       />
       <Input style={styles.input} placeholder={'password'} secureTextEntry />
-      <FilledButton title="Login" style={styles.loginButton} />
+      <FilledButton
+        title="Register"
+        style={styles.loginButton}
+        onPress={() => {
+          register();
+        }}
+      />
     </View>
   );
 }
