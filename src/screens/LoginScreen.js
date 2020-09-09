@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {StyleSheet, View} from 'react-native';
 
 // Komponen
@@ -8,7 +8,11 @@ import {FilledButton} from '../components/FilledButton';
 import {TextButton} from '../components/TextButton';
 import {Error} from '../components/Error';
 
+// Contexts
+import {AuthContext} from '../contexts/AuthContext';
+
 export function LoginScreen({navigation}) {
+  const {login} = useContext(AuthContext);
   return (
     <View style={styles.container}>
       <Heading style={styles.title}>LOGIN</Heading>
@@ -23,7 +27,7 @@ export function LoginScreen({navigation}) {
         title="Login"
         style={styles.loginButton}
         onPress={() => {
-          navigation.navigate('Login');
+          login();
         }}
       />
       <TextButton
