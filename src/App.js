@@ -13,8 +13,8 @@ const RootStack = createStackNavigator();
 
 export default function () {
   const auth = useMemo(() => ({
-    login: () => {
-      console.log('login');
+    login: (email, password) => {
+      console.log('login', email, password);
     },
     logout: () => {
       console.log('logout');
