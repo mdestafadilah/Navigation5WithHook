@@ -23,10 +23,15 @@ export function LoginScreen({navigation}) {
         title="Login"
         style={styles.loginButton}
         onPress={() => {
+          navigation.navigate('Login');
+        }}
+      />
+      <TextButton
+        title={'Sudah punya akun? buat ya'}
+        onPress={() => {
           navigation.navigate('Registration');
         }}
       />
-      <TextButton title={'Sudah punya akun? buat ya'} onPress={() => {}} />
     </View>
   );
 }
