@@ -19,8 +19,8 @@ export default function () {
     logout: () => {
       console.log('logout');
     },
-    register: () => {
-      console.log('register');
+    register: (email, password) => {
+      console.log('register', email, password);
     },
   }));
 
